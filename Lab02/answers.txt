@@ -1,0 +1,13 @@
+When should accessor methods be use?
+
+Answer:
+- When you need read-only access.
+- Returning interfaces instead of fields
+   + It’s fine for a method to return an interface type rather than a concrete field.
+   + This still protects encapsulation, since callers interact only with the interface, not the actual implementation.
+   + We can change the internal implementation later without breaking external code.
+- At procedural boundaries
+   + In boundary-layer classes (connecting to databases, operating systems, or APIs, ...), accessors are often necessary.
+   + These systems require generic, data-oriented access, so getters/setters usage are justified there.
+- In generic or unpredictable APIs
+   + Accessors provide flexibility when the class can’t predict how it will be used. 
